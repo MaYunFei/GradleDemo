@@ -4,9 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     app:flexDirection="column"
     app:justifyContent="flex_start"
-    android:orientation="vertical"
     tools:context="io.github.mayunfei.demo.MainActivity">
 
+    <TextView
+        android:id="@+id/tv_is_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

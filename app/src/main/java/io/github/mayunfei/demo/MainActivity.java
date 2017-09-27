@@ -18,5 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView isTest = (TextView) findViewById(R.id.tv_is_test);
+        isTest.setText(BuildConfig.API_URL);
     }
 }
