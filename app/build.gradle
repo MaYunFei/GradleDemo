@@ -14,7 +14,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            if (IS_TEST_URL){
+            if ("true".equals(IS_TEST_URL)){
                 buildConfigField "String", "API_URL", '"test"'
             }else{
                 buildConfigField "String", "API_URL", '"server"'
@@ -22,7 +22,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug{
-            if (IS_TEST_URL){
+            if ("true".equals(IS_TEST_URL)){
                 buildConfigField "String", "API_URL", '"test"'
             }else{
                 buildConfigField "String", "API_URL", '"server"'
