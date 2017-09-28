@@ -30,6 +30,28 @@ android {
 
         }
     }
+
+    //修改生成的apk名字
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def newName
+            def oldFile = output.outputFile
+            def outDirectory = oldFile.parent
+
+            if ("true".equals(IS_JENKINS)) {
+                outDirectory = '/home/mayunfei/DevTools/apache-tomcat-8.5.20/apk'
+                newName =   variant.buildType.name + '.apk'
+            } else {
+                if (variant.buildType.name.equals('debug')) {
+                    newName = "debug.apk"
+                } else {
+                    newName = variant.buildType.name + '.apk'
+                }
+            }
+            output.outputFile = new File(outDirectory, newName)
+
+        }
+    }
 }
 
 dependencies {
